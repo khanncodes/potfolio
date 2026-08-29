@@ -24,20 +24,14 @@
             padding: 25px 35px 15px 35px;
         }
 
-        .header article {
-            font-weight: bolder;
-        }
-
         .ul {
             display: flex;
-
         }
 
         .header li {
-            display: flex;
+            list-style: none;
             margin-right: 50px;
             border-bottom: solid 1px transparent;
-            box-sizing: border-box;
         }
 
         .header li:hover {
@@ -45,30 +39,31 @@
             border-bottom: solid 1px #A9A9A9;
         }
 
-        .title {
+        .about {
             width: 700px;
             margin: 80px 8% 40px;
         }
 
-        .title span {
+        .about span {
             display: inline-flex;
             font-size: 18px;
             color: #1B5448;
             margin: 34px 30PX 13px 30PX;
         }
 
-        .title h1 {
+        .about h1 {
             font-size: 65px;
             color: #1b1f23;
         }
 
-        .title p {
+        .about p {
             line-height: 35px;
             margin: 18px 0px;
             font-size: 1.5em;
         }
 
-        .title a {
+        .about a {
+            /* view ptojects */
             border: solid 1px black;
             color: #fff;
             text-decoration: none;
@@ -80,35 +75,26 @@
             word-spacing: 7px;
         }
 
-        .title a:hover {
+        .about a:hover {
+            /* view ptojects */
             cursor: pointer;
             filter: brightness(0.85);
         }
 
-        #skills h2 {
-            font-weight: normal;
+        .h2 {
+            font-weight: h2;
             font-size: 18px;
             color: #1B5448;
         }
 
-        #skills {
-            margin: 0px 8% 40px;
-            padding-top: 70px;
-
+        .skills {
+            margin: 70px 8% 40px;
         }
 
         .skill-card {
             padding: 10px;
             margin: 20px 5px;
             box-shadow: -5px 0px 0px #006A4E;
-            background-color: #E0E5E5;
-
-        }
-
-        .skill-card p,
-        .skill-card h3 {
-            padding: 05px;
-            margin: 10px 5px;
             background-color: #E0E5E5;
         }
 
@@ -119,16 +105,16 @@
             gap: 20px;
         }
 
-        #work {
-            margin: 0px 8% 40px;
-            padding-top: 70px;
-
+        .skill-card p,
+        .skill-card h3 {
+            padding: 05px;
+            margin: 10px 5px;
+            background-color: #E0E5E5;
         }
 
-        #work h2 {
-            font-weight: normal;
-            font-size: 18px;
-            color: #1B5448;
+        #work {
+            margin: 70px 8% 40px;
+
         }
 
         .work-item {
@@ -136,6 +122,11 @@
 
             margin: 20px 0px;
             border-bottom: 1px solid #d8d3c7;
+        }
+
+        .work-item a {
+            text-decoration: none;
+            color: black;
         }
 
         .work-item span {
@@ -166,10 +157,6 @@
             padding: 7px;
         }
 
-        .contact h3 {
-            margin-bottom: 10px;
-        }
-
         .contact li {
             display: flex;
             margin-right: 50px;
@@ -180,51 +167,40 @@
             cursor: pointer;
         }
 
-        .rights {
+        #rights {
             margin: 15px;
             display: flex;
             justify-content: center;
-        }
-
-        h5 {
-            font-weight: normal;
-        }
-
-        a {
-            text-decoration: none;
-            color: black;
         }
     </style>
 </head>
 
 <body>
-    <div class="bottom">
-        <header class="header">
-            <nav>
-                <article>M.A.K's</M>
-                </article>
-                <ul class="ul">
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#projects">
-                            Projects</a></li>
-                    <li><a href="#contact">contact</a></li>
-                </ul>
-            </nav>
-        </header>
-    </div>
+    <header id="header" class="bottom">
+        <nav class="header">
+            <h3>M.A.K's
+            </h3>
+            <ul class="ul">
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">
+                        Projects</a></li>
+                <li><a href="#contact">contact</a></li>
+            </ul>
+        </nav>
+    </header>
     <main>
-        <div class="bottom">
-            <div class="title">
+
+        <section id="aboutme" class="bottom">
+            <div class="about">
                 <span>// front-end developer, based in Lahore</span>
                 <h1>I build clean, fast interfaces that hold up under real use.</h1>
                 <p>Third-year CS student learning web development from the ground up — currently deep in HTML &amp; CSS,
                     building toward JavaScript and beyond. This is a running log of what I make along the way.</p>
                 <a href="#projects"> View projects </a>
-            </div>
-        </div>
-        <div class="bottom">
-            <section id="skills">
-                <h2>01 — Skills</h2>
+        </section>
+        <section class="bottom" id="skills">
+            <div class="skills">
+                <h2 class="h2">01 — Skills</h2>
                 <article class="skill-grid">
                     <div class="skill-card">
                         <h3>HTML5</h3>
@@ -242,16 +218,15 @@
                         <h3>Git basics</h3>
                         <p>Version control fundamentals, still leveling up.</p>
                     </div>
-                </article>
-            </section>
-        </div>
+            </div>
+        </section>
         <section id="projects" class="bottom">
             <div id="work">
-                <h2>02 — PRACTICE PROJECTS</h2>
+                <h2 class="h2">02 — PRACTICE PROJECTS</h2>
                 <div class="work-list">
                     <div class="work-item">
                         <div>
-                            <a href="http://127.0.0.1:3002/cafe-noir.html?vscode-livepreview=true" target="_blank">
+                            <a href="#">
                                 <h3>Café Noir — Landing Page</h3>
                             </a>
                             <span>HTML / CSS</span>
@@ -287,12 +262,10 @@
                 <span>
                     <ul class="contact">
                         <li>
-
                             <img src="linkedin (1).png" alt="linkedin" class="icon">
                             <p>xyz</p>
                         </li>
                         <li>
-
                             <img src="phone.jfif" alt="phone no" class="icon">
                             <p>03123456789</p>
                         </li>
@@ -306,21 +279,20 @@
 
                         </li>
                         <li>
-
                             <img src="whatsapp.png" alt="whatsapp" class="icon">
                             <p> 03123456789</p>
                         </li>
                     </ul>
                 </span>
-
             </div>
         </section>
-        <footer>
-            <section id="rights">
-                <h5 class="rights"> Built line by line, video by video. © 2026 MAK. </h5>
-            </section>
-        </footer>
     </main>
+    <footer>
+        <section id="rights">
+            <small> Built line by line, video by video. © 2026 MAK. </small>
+        </section>
+    </footer>
+
 </body>
 
 </html>
