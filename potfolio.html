@@ -5,28 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdullah's professional potfolio</title>
+    <link rel="stylesheet" href="animations.css">
     <style>
         * {
-            background-color: #f6f4ef;
             margin: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background: linear-gradient(#000000 0%,
+                    #0E1822 40%,
+                    #1C2F43 60%,
+                    #0E1822 80%,
+                    #000000 100%);
         }
 
         nav {
             display: flex;
             justify-content: space-between;
+
         }
 
         .bottom {
-            border-bottom: solid 2px #d8d3c7;
+            border-bottom: solid 2px #1C2F43;
         }
 
         .header {
             padding: 25px 35px 15px 35px;
+            color: white;
+        }
+
+        ul a {
+            text-decoration: none;
+            color: white;
         }
 
         .ul {
             display: flex;
         }
+
 
         .header li {
             list-style: none;
@@ -39,109 +56,171 @@
             border-bottom: solid 1px #A9A9A9;
         }
 
+        #aboutme {
+            display: flex;
+        }
+
         .about {
             width: 700px;
-            margin: 80px 8% 40px;
+            margin: 0 3% 40px;
+            padding: 80px 0px;
+
         }
 
         .about span {
             display: inline-flex;
             font-size: 18px;
-            color: #1B5448;
+            color: #D9A15C;
             margin: 34px 30PX 13px 30PX;
         }
 
         .about h1 {
             font-size: 65px;
-            color: #1b1f23;
+            color: white;
         }
 
         .about p {
             line-height: 35px;
             margin: 18px 0px;
             font-size: 1.5em;
+            color: white;
         }
 
         .about a {
+            cursor: pointer;
             /* view ptojects */
-            border: solid 1px black;
-            color: #fff;
+            border-radius: 10px;
+            color: #000000;
             text-decoration: none;
             margin: 20px 51px;
             padding: 15px 29px;
             display: inline-block;
-            background-color: #1b1f23;
+            background-color: #D9A15C;
             font-size: 23px;
             word-spacing: 7px;
+            transition: 0.2s ease-in-out;
         }
 
         .about a:hover {
             /* view ptojects */
-            cursor: pointer;
-            filter: brightness(0.85);
+            transform: scale(1.1);
+            /* filter: brightness(0.85); */
         }
 
         .h2 {
-            font-weight: h2;
-            font-size: 18px;
-            color: #1B5448;
+            font-size: 28px;
+            color: #D9A15C;
         }
 
+
         .skills {
-            margin: 70px 8% 40px;
+            margin: 70px 3% 40px;
+        }
+
+        #skills {
+            border-bottom: 2px solid #273e57;
         }
 
         .skill-card {
-            padding: 10px;
-            margin: 20px 5px;
-            box-shadow: -5px 0px 0px #006A4E;
-            background-color: #E0E5E5;
+
+            max-width: 180px;
+            cursor: pointer;
+            margin: 35px 0px 0px 0px;
+            background: #121e2b;
+            border: 2px solid #182839;
+            border-radius: 10px;
+            padding: 28px;
+            transition: .3s ease-in-out;
+        }
+
+        .skill-card:hover {
+            border: 2px solid #D9A15C;
+            transform: scale(1.1);
+        }
+
+
+        .skill-card p {
+            font-size: 16px;
+            color: white;
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        .skill-card h3 {
+            font-size: 22px;
+            padding: 0px 0px 15px 0px;
+            color: white;
         }
 
         .skill-grid {
-
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
             gap: 20px;
-        }
-
-        .skill-card p,
-        .skill-card h3 {
-            padding: 05px;
-            margin: 10px 5px;
-            background-color: #E0E5E5;
+            max-width: 1200px;
+            /* margin: 0px auto ; */
         }
 
         #work {
-            margin: 70px 8% 40px;
+            margin: 70px 3% 40px;
 
         }
 
         .work-item {
-            padding: 20px 0px;
-
-            margin: 20px 0px;
-            border-bottom: 1px solid #d8d3c7;
+            cursor: pointer;
+            max-width: 220px;
+            margin: 35px auto;
+            background: #121e2b;
+            border: 2px solid #182839;
+            border-radius: 10px;
+            padding: 15px;
+            transition: .3s ease-in-out;
         }
 
-        .work-item a ,ul a{
-            text-decoration: none;
-            color: black;
+        .work-item:hover {
+            border: 2px solid #D9A15C;
+            transform: scale(1.1);
+
         }
 
-        .work-item span {
-            font-size: 12px;
-        }
-
-        .work-item div {
-            margin: 10px 0px;
+        .project-img {
             display: flex;
-            justify-content: space-between;
+            justify-content: center;
+            transition: .3s ease-in-out;
+        }
 
+        .work-item .project-img img {
+            width: 230px;
+            height: 150px;
+            transition: .3s ease-in-out;
+        }
+
+        .work-item:hover .project-img img {
+            transform: scale(1.08);
+        }
+
+        .work-item h3 {
+            font-size: 22px;
+            padding: 0px 0px 15px 0px;
+            color: white;
+        }
+
+        .work-item p {
+            font-size: 16px;
+            color: white;
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 550px;
         }
 
         .contact {
-            margin: 20px 8% 20px;
+            margin: 20px 3% 20px;
+            color: white;
         }
 
         .icon {
@@ -171,6 +250,7 @@
             margin: 15px;
             display: flex;
             justify-content: center;
+            color: white;
         }
     </style>
 </head>
@@ -194,9 +274,14 @@
             <div class="about">
                 <span>// front-end developer, based in Lahore</span>
                 <h1>I build clean, fast interfaces that hold up under real use.</h1>
-                <p>Third-year CS student learning web development from the ground up — currently deep in HTML &amp; CSS,
+                <p>Self taugh developer still learning web development from the ground up — currently deep in HTML &amp; CSS,
                     building toward JavaScript and beyond. This is a running log of what I make along the way.</p>
                 <a href="#projects"> View projects </a>
+            </div>
+            <div>
+                <img class="fadein" src="Adobe Express - file.png" alt="laptop"
+                    style="width: 400px; margin-top: 200px;padding-right: 100px;">
+            </div>
         </section>
         <section class="bottom" id="skills">
             <div class="skills">
@@ -218,41 +303,36 @@
                         <h3>Git basics</h3>
                         <p>Version control fundamentals, still leveling up.</p>
                     </div>
+                </article>
             </div>
         </section>
         <section id="projects" class="bottom">
             <div id="work">
                 <h2 class="h2">02 — PRACTICE PROJECTS</h2>
-                <div class="work-list">
+                <article class="work-grid">
                     <div class="work-item">
-                        <div>
-                            <a href="#">
-                                <h3>Café Noir — Landing Page</h3>
-                            </a>
-                            <span>HTML / CSS</span>
+                        <div class="project-img">
+                            <img src="porfolio.avif" alt="cafe Noir">
                         </div>
-                        <p>A restaurant landing page built to practice grid-based menu layouts and warm visual identity.
+                        <h3>This Portfolio</h3>
+                        <p>My own site — testing a monospace-and-serif type pairing and a journal-style layout.</p>
+                    </div>
+                    <div class="work-item">
+                        <div class="project-img">
+                            <img src="cafe noir.jfif" alt="cafe Noir">
+                        </div>
+                        <h3>Café Noir — Landing Page</h3>
+                        <p>A restaurant landing page built to practice grid-based menu layouts and warm visual
+                            identity.
                         </p>
                     </div>
                     <!-- <div class="work-item">
-                        <div>
-                            <a href="#">
                                 <h3>Loop — Product Landing Page</h3>
-                            </a>
-                            <span>HTML / CSS</span>
-                        </div>
                         <p>A SaaS-style landing page practicing pricing tables and feature-grid composition.</p>
                     </div> -->
-                    <div class="work-item">
-                        <div>
-                            <a href="#">
-                                <h3>This Portfolio</h3>
-                            </a>
-                            <span>HTML / CSS</span>
-                        </div>
-                        <p>My own site — testing a monospace-and-serif type pairing and a journal-style layout.</p>
-                    </div>
-                </div>
+
+                </article>
+            </div>
             </div>
         </section>
 
@@ -263,11 +343,12 @@
                     <ul class="contact">
                         <li>
                             <img src="linkedin (1).png" alt="linkedin" class="icon">
-                            <p>xyz</p>
+                            <a href="https://www.linkedin.com/in/habdullahk/" target="_blank"
+                                style="margin-top:  5px;">Adullah Khan</a>
                         </li>
                         <li>
                             <img src="phone.jfif" alt="phone no" class="icon">
-                            <p>03123456789</p>
+                            <p>03075304785</p>
                         </li>
                     </ul>
                 </span>
@@ -275,12 +356,23 @@
                     <ul class="contact">
                         <li>
                             <img src="email.webp" alt="emai" class="icon">
-                            <p>xyz@gmail.com</p>
+                            <p>mabk1707@gmail.com</p>
 
                         </li>
                         <li>
                             <img src="whatsapp.png" alt="whatsapp" class="icon">
-                            <p> 03123456789</p>
+                            <p> 03075304785</p>
+                        </li>
+                    </ul>
+                </span>
+                <span>
+                    <ul class="contact">
+                        <li>
+                            <img src="github.svg" alt="fithub" class="icon">
+                            <a href="https://github.com/khanncodes" target="_blank">
+                                <p>khanncodes</p>
+                            </a>
+
                         </li>
                     </ul>
                 </span>
